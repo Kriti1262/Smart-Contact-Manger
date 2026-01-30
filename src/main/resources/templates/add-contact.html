@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en"
+	th:replace="base_admin :: Layout(~{::section})">
+
+<head>
+<title>Add Contact - Smart Contact Manager</title>
+
+<!-- TinyMCE Editor -->
+<script
+	src="https://cdn.tiny.cloud/1/no-api-key/tinymce/6/tinymce.min.js"
+	referrerpolicy="origin"></script>
+<script>
+      tinymce.init({
+        selector: '#about',
+        menubar: false,
+        plugins: 'lists link image preview',
+        toolbar: 'undo redo | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat',
+        branding: false
+      });
+    </script>
+</head>
+
+<body>
+	<section>
+		<div class="container mt-4">
+			<h3 class="mb-4">Add New Contact</h3>
+
+			<form th:action="@{/user/process-contact}" th:object="${contact}"
+				method="post" enctype="multipart/form-data">
+
+				<div class="mb-3 position-relative">
+					<label for="name" class="form-label fw-semibold">Enter
+						First Name</label> <i
+						class="fas fa-user position-absolute top-50 start-0 translate-middle-y ps-2"></i>
+					<input type="text" th:field="*{name}" class="form-control ps-5"
+						id="name" placeholder="Enter First Name" required />
+				</div>
+
+				<div class="mb-3 position-relative">
+					<label for="nickname" class="form-label fw-semibold">Enter
+						Second Name</label> <i
+						class="fas fa-user-tie position-absolute top-50 start-0 translate-middle-y ps-2"></i>
+					<input type="text" th:field="*{secondName}" class="form-control ps-5"
+						id="secondName" placeholder="Enter Second Name" />
+				</div>
+
+				<div class="mb-3 position-relative">
+					<label for="phone" class="form-label fw-semibold">Enter
+						Contact Number</label> <i
+						class="fas fa-phone position-absolute top-50 start-0 translate-middle-y ps-2"></i>
+					<input type="tel" th:field="*{phone}" class="form-control ps-5"
+						id="phone" placeholder="Enter contact number" />
+				</div>
+
+				<div class="mb-3 position-relative">
+					<label for="email" class="form-label fw-semibold">Enter
+						Email Address</label> <i
+						class="fas fa-envelope position-absolute top-50 start-0 translate-middle-y ps-2"></i>
+					<input type="email" th:field="*{email}" class="form-control ps-5"
+						id="email" placeholder="Enter Email Address" />
+				</div>
+
+				<div class="mb-3 position-relative">
+					<label for="work" class="form-label fw-semibold">Enter Work
+						Experience</label> <i
+						class="fas fa-briefcase position-absolute top-50 start-0 translate-middle-y ps-2"></i>
+					<input type="text" th:field="*{work}" class="form-control ps-5"
+						id="work" placeholder="Enter work experience" />
+				</div>
+
+				<div class="mb-3">
+					<label for="about" class="form-label fw-semibold">Enter
+						More about this contact</label>
+					<textarea th:field="*{description}" id="description" rows="6"
+						class="form-control" placeholder="Enter More about this contact"></textarea>
+				</div>
+
+				<div class="mb-3">
+					<label for="profileImage" class="form-label fw-semibold">Choose
+						Profile Image</label> <input type="file" class="form-control"
+						id="image" name="contactImage" />
+				</div>
+
+				<button type="submit" class="btn btn-teal">Add Contact</button>
+			</form>
+		</div>
+	</section>
+</body>
+</html>

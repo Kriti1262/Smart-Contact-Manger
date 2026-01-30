@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:replace="base_admin :: Layout(~{::section})">
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <section>
+        <h1>Welcome to the user dashboard</h1>
+        <h1>
+            Username: <span th:text="${user.name}">Username</span>
+        </h1>
+    </section>
+</body>
+</html>

@@ -1,0 +1,97 @@
+/* Container for the form */
+.container.mt-4 {
+    max-width: 600px;
+    background: #fff;
+    padding: 30px 40px;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 40px auto;
+}
+
+/* Form heading */
+.container.mt-4 h3 {
+    font-weight: 700;
+    color: #006666;
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8rem;
+}
+
+/* Labels */
+label.form-label.fw-semibold {
+    font-weight: 600;
+    color: #004d4d;
+    margin-bottom: 8px;
+    display: block;
+}
+
+/* Inputs and textarea */
+input.form-control,
+textarea.form-control {
+    border: 1.5px solid #009999;
+    border-radius: 6px;
+    padding: 10px 15px 10px 40px; /* leave space for icons */
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+input.form-control:focus,
+textarea.form-control:focus {
+    border-color: #007373;
+    outline: none;
+    box-shadow: 0 0 5px #007373aa;
+}
+
+/* Position icons inside inputs */
+.position-relative i.fas {
+    color: #006666;
+    font-size: 1.4rem;
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    pointer-events: none;
+    opacity: 0.85;
+}
+
+
+/* Textarea padding adjustment */
+textarea.form-control {
+    padding-left: 15px;
+    resize: vertical;
+}
+
+/* Submit button */
+button.btn.btn-teal {
+    background-color: #007373;
+    color: white;
+    padding: 8px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    margin: 25px auto 0;
+    width: 140px;
+    text-align: center;
+}
+
+button.btn.btn-teal:hover {
+    background-color: #004d4d;
+}
+
+/* Responsive: smaller container on small screens */
+@media (max-width: 700px) {
+    .container.mt-4 {
+        padding: 20px 25px;
+        margin: 20px 15px;
+    }
+
+    button.btn.btn-teal {
+        width: 100%;
+    }
+}
+
+
+

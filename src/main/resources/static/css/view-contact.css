@@ -1,0 +1,64 @@
+/* Define theme color */
+:root {
+    --teal: #00796B;
+}
+
+/* Style the card */
+.card {
+    margin-top: 40px;
+    border: 1px solid var(--teal);
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Section heading */
+.card-body h2 {
+    font-weight: 600;
+    color: var(--teal);
+    margin-bottom: 20px;
+}
+
+/* Table styling */
+.table {
+    margin-bottom: 0;
+    font-size: 16px;
+    border-collapse: collapse;
+}
+
+/* Header row styling */
+.table thead.table-dark th {
+    background-color: var(--teal) !important;
+    color: #fff;
+    border: 1px solid var(--teal);
+}
+
+/* Cell borders with navbar color */
+.table th,
+.table td {
+    border: 1px solid var(--teal);
+    vertical-align: middle;
+    white-space: nowrap;
+    padding: 8px 12px;
+}
+
+/* Responsive overflow fix */
+.table-responsive {
+    overflow-x: auto;
+}
+
+/* Hover effect */
+.table-hover tbody tr:hover {
+    background-color: #e0f2f1;
+}
+
+/* Adjust spacing for small screens */
+@media (max-width: 768px) {
+    .card-body h2 {
+        font-size: 1.5rem;
+    }
+
+    .table th,
+    .table td {
+        font-size: 14px;
+    }
+}

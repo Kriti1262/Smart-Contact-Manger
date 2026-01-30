@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      th:replace="base::Layout(~{::section})">
+<head>
+    <title>Signup</title>
+</head>
+<body>
+<section>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <div class="card my-card shadow p-4">
+                    <div class="text-center mb-4">
+                        <img src="/image/download.jpg" alt="register-icon" width="80" />
+                        <h2>Register Here !!</h2>
+                    </div>
+
+                    <form th:action="@{/signup}" method="post" th:object="${user}">
+                        <div class="mb-3">
+                            <label class="form-label">Your Name</label>
+                            <input type="text" class="form-control" placeholder="Enter here" 
+                                   th:field="*{name}" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Your Email</label>
+                            <input type="email" class="form-control" placeholder="Enter here" 
+                                   th:field="*{email}" required />
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label">Your Password</label>
+                            <input type="password" class="form-control" placeholder="Enter here" 
+                                   th:field="*{password}" required />
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="3" placeholder="Enter something yourself"
+                                      th:field="*{about}"></textarea>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="agreement"
+                                   id="flexCheckDefault" required />
+                            <label class="form-check-label" for="flexCheckDefault"> Terms and Conditions</label>
+                        </div>
+                        <div class="text-center mt-3">
+                            <button type="submit" class="btn btn-submit">Submit</button>
+                            <button type="reset" class="btn btn-reset">Reset</button>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
